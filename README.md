@@ -27,24 +27,8 @@ It supports basic CRUD operations on books and is designed to be deployed easily
 
 ---
 
-bookStore/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/example/bookstore/
-│   │   │       ├── Book.java                # Entity representing a Book
-│   │   │       ├── BookController.java      # REST controller for managing books
-│   │   │       ├── BookRepository.java      # Spring Data MongoDB repository
-│   │   │       └── BookStoreApplication.java# Main class to run the Spring Boot app
-│   │   └── resources/
-│   │       ├── application.properties       # Common Spring Boot configuration
-│   │       ├── application.local.properties # Local environment configs
-│   │       └── application.azure.properties # Azure-specific configuration
-│
-├── target/                                  # Compiled bytecode and JAR files (generated)
-├── pom.xml                                  # Maven configuration file
-├── Dockerfile                               # Docker image build configuration
-├── README.md                                # Project documentation
+📁 Project Structure
+<pre> bookStore/ ├── src/ │ └── main/ │ ├── java/ │ │ └── com/example/bookstore/ │ │ ├── Book.java # Entity representing a Book │ │ ├── BookController.java # REST controller for managing books │ │ ├── BookRepository.java # Spring Data MongoDB repository │ │ └── BookStoreApplication.java # Main class to run the Spring Boot app │ └── resources/ │ ├── application.properties # Common Spring Boot configuration │ ├── application.local.properties # Local environment configs │ └── application.azure.properties # Azure-specific configuration ├── target/ # Compiled bytecode and JAR files (generated) ├── pom.xml # Maven configuration file ├── Dockerfile # Docker image build configuration └── README.md # Project documentation </pre>
 
 
 📝 Description of Key Components

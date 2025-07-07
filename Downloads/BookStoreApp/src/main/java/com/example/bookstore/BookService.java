@@ -3,6 +3,7 @@ package com.example.bookstore;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,5 +41,17 @@ public class BookService {
       public Page<Book> getAll(Pageable pageable) {
         return bookRepo.findAll(pageable);
       }
+
+
+    public List<Book> getBooksSortedByPrice(String order) {
+        Sort sort = order.equalsIgnoreCase("desc") ?
+                Sort.by("price").descending() :
+                Sort.by("price").ascending();
+        return bookRepo.findAll(sort);
+    }
+
+    public List<Book> getBooksByPrice(double price) {
+        return bookRepo.findByPrice(price);
+    }
 
 }

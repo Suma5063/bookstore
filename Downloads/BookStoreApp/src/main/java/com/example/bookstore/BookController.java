@@ -47,4 +47,16 @@ public class BookController {
     public String home() {
         return "📚 BookStore API is running! Use /books for endpoints.";
     }
+
+    // GET /books/sorted-by-price?order=asc|desc
+    @GetMapping("/sorted-by-price")
+    public List<Book> getBooksSortedByPrice(@RequestParam(defaultValue = "asc") String order) {
+        return bookService.getBooksSortedByPrice(order);
+    }
+
+    // GET /books/by-price/399.0
+    @GetMapping("/by-price/{price}")
+    public List<Book> getBooksByExactPrice(@PathVariable double price) {
+        return bookService.getBooksByPrice(price);
+    }
 }

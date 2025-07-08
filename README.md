@@ -75,7 +75,6 @@ bookStore/
 ## 🔄 How It Works
 
 ### 📘 Add a Book
-```http
 POST /books
 {
   "title": "The Alchemist",

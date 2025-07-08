@@ -46,4 +46,30 @@ public class BookController {
     public String home() {
         return "📚 BookStore API is running! Use /books for endpoints.";
     }
+
+    @GetMapping("/books/title/{title}")
+    public ResponseEntity<List<Book>> getBooksByTitle(@PathVariable String title) {
+        return ResponseEntity.ok(bookService.getBooksByTitle(title));
+    }
+
+    @GetMapping("/books/author/{author}")
+    public ResponseEntity<List<Book>> getBooksByAuthor(@PathVariable String author) {
+        return ResponseEntity.ok(bookService.getBooksByAuthor(author));
+    }
+
+    @GetMapping("/books/price")
+    public ResponseEntity<List<Book>> getBooksByPriceRange(
+            @RequestParam Double min,
+            @RequestParam Double max) {
+        return ResponseEntity.ok(bookService.getBooksByPriceRange(min, max));
+    }
+
+    @GetMapping("/books")
+    public ResponseEntity<List<Book>> getBooksSorted(@RequestParam(required = false) String sort) {
+        if (sort != null && (sort.equals("title") || sort.equals("author"))) {
+            return ResponseEntity.ok(bookService.getBooksSortedBy(sort));
+        }
+        return ResponseEntity.ok(bookService.getAll());
+    }
+
 }

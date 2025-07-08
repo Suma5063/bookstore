@@ -1,6 +1,7 @@
 package com.example.bookstore;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,5 +35,23 @@ public class BookService {
     public void delete(String id) {
         bookRepo.deleteById(id);
     }
+
+    public List<Book> getBooksByTitle(String title) {
+        return bookRepo.findByTitleIgnoreCase(title);
+    }
+
+    public List<Book> getBooksByAuthor(String author) {
+        return bookRepo.findByAuthorIgnoreCase(author);
+    }
+
+    public List<Book> getBooksByPriceRange(Double min, Double max) {
+        return bookRepo.findByPriceBetween(min, max);
+    }
+
+    public List<Book> getBooksSortedBy(String field) {
+        return bookRepo.findAll(Sort.by(Sort.Direction.ASC, field));
+    }
+
+
 }
 

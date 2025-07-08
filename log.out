@@ -97,7 +97,7 @@ com.mongodb.MongoCommandException: Command failed with error 8000 (AtlasError): 
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar!/:6.1.6]
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.6.jar!/:6.1.6]
 	at jdk.proxy2/jdk.proxy2.$Proxy68.findAll(Unknown Source) ~[na:na]
-	at com.example.bookstore.BookController.getAll(BookController.java:22) ~[!/:1.0.0]
+	at com.example.bookstore.controller.BookController.getAll(BookController.java:22) ~[!/:1.0.0]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
